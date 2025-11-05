@@ -1,0 +1,42 @@
+#calendar {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    width: 40%;
+    padding: 30px;
+    font:
+        bold small-caps 3.5rem "Consolas",
+        sans-serif;
+    border: 5px solid black;
+}
+
+.day-info {
+    display: flex;
+}
+
+.day {
+    display: flex;
+    flex: 2;
+
+    border: 2px solid black;
+    justify-content: center;
+}
+
+.month {
+    display: flex;
+    align-content: stretch;
+    flex: auto;
+    flex-direction: column;
+}
+
+.week {
+    display: flex;
+    flex: 10;
+    align-content: stretch;
+}
+
+.text-field {
+    width: 40px;
+}
