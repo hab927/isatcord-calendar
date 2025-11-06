@@ -127,7 +127,7 @@ async function BuildCalendar(reqDay, reqMonth, reqYear) {
 }
 
 function ReselectCalendar(newDay) {
-    dayDivs[chosenDay].classList.remove("highlighted");
+    dayDivs[Number(chosenDay)].classList.remove("highlighted");
     dayDivs[newDay].classList.add("highlighted");
     chosenDay = newDay;
 }
@@ -141,9 +141,9 @@ function MakeEvent(event) {
     eventDiv = document.createElement("div");
     eventDiv.classList.add("day-info");
 
-    let tooltipSpan = document.createElement("span");
-    tooltipSpan.classList.add("day-info-tooltip");
-    tooltipSpan.textContent = event.eventDescription;
+    let tooltipDiv = document.createElement("div");
+    tooltipDiv.classList.add("day-info-tooltip");
+    tooltipDiv.textContent = event.eventDescription;
 
     if (event.eventType == "Anniversary") {
         let ordinal = String(chosenYear - Number(event.eventDate.split('-')[0]));
@@ -176,13 +176,14 @@ function MakeEvent(event) {
         let newTitle = event.eventName.replace("$ORDINAL", ordinal);
         let newDesc = event.eventDescription.replace("$ORDINAL", ordinal);
         eventDiv.textContent = newTitle;
-        tooltipSpan.textContent = newDesc;
+        tooltipDiv.textContent = newDesc;
     }
     else {
         eventDiv.textContent = event.eventName;
     }
 
-    eventDiv.appendChild(tooltipSpan);
+    // let eventDay = parseInt(event.eventDate.split('-')[2], 10);
+    eventDiv.appendChild(tooltipDiv);
 
     return eventDiv;
 }

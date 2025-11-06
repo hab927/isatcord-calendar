@@ -11,7 +11,7 @@ confirmButton.onclick = function() {
 
     let dateArray = GetDateArray();
 
-    if (chosenMonth != shownMonth || chosenYear != shownYear) {
+    if (months[chosenMonth] != shownMonth || chosenYear != shownYear) {
         monthDiv.remove();
         BuildCalendar(dateArray[0], dateArray[1], dateArray[2]);
     }
