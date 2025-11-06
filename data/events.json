@@ -8,6 +8,13 @@
             "eventDescription": "It's Siffrin's birthday! Happy birthday goober!"
         },
         {
+            "eventType": "Anniversary",
+            "eventName": "ISAT $ORDINAL Anniversary!",
+            "eventAnnual": true,
+            "eventDate": "2023-11-20",
+            "eventDescription": "Happy $ORDINAL anniversary In Stars and Time!"
+        },
+        {
             "eventType": "Stream",
             "eventName": "Rad's House Flipper stream",
             "eventAnnual": false,
