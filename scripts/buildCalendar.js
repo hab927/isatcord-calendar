@@ -141,8 +141,11 @@ function MakeEvent(event) {
     eventDiv = document.createElement("div");
     eventDiv.classList.add("day-info");
 
+    let tooltipSpan = document.createElement("span");
+    tooltipSpan.classList.add("day-info-tooltip");
+    tooltipSpan.textContent = event.eventDescription;
+
     if (event.eventType == "Anniversary") {
-        let originalTitle = event.eventName;
         let ordinal = String(chosenYear - Number(event.eventDate.split('-')[0]));
         let ordinalSuffix;
 
@@ -170,12 +173,16 @@ function MakeEvent(event) {
         }
 
         ordinal += ordinalSuffix;
-        let newTitle = originalTitle.replace("$ORDINAL", ordinal);
+        let newTitle = event.eventName.replace("$ORDINAL", ordinal);
+        let newDesc = event.eventDescription.replace("$ORDINAL", ordinal);
         eventDiv.textContent = newTitle;
+        tooltipSpan.textContent = newDesc;
     }
     else {
         eventDiv.textContent = event.eventName;
     }
+
+    eventDiv.appendChild(tooltipSpan);
 
     return eventDiv;
 }
