@@ -69,6 +69,8 @@ input {
     z-index: 1;
     border: 1px solid white;
     position: relative;
+    width: inherit;
+    word-wrap: break-word;
 }
 
 .day-info-tooltip {
@@ -98,6 +100,7 @@ input {
 .day {
     display: flex;
     flex: 2;
+    width: inherit;
 
     padding: 4px;
     border: 2px solid white;
@@ -146,15 +149,4 @@ input {
     align-content: stretch;
 
     margin-top: -2px;
-}
-
-.text-field {
-    width: 40px;
-    font-size: 30px;
-    background-color: black;
-    border: 2px solid white;
-}
-
-.text-fields {
-
 }

@@ -4,5 +4,7 @@ window.onload = async function() {
     let dateArray = currentDate.split('-');
     dateArray.reverse();
 
+    datePicker.value = currentDate;
+
     BuildCalendar(dateArray[0], dateArray[1], dateArray[2]);
 }
