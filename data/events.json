@@ -8,18 +8,39 @@
             "eventDescription": "It's Siffrin's birthday! Happy birthday goober!"
         },
         {
+            "eventType": "Birthday",
+            "eventName": "Mirabelle's Birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-07-27",
+            "eventDescription": "It's Mirabelle's birthday! Happy birthday goober!"
+        },
+        {
+            "eventType": "Birthday",
+            "eventName": "Isabeau's Birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-03-09",
+            "eventDescription": "It's Isabeau's birthday! Happy birthday goober!"
+        },
+        {
+            "eventType": "Birthday",
+            "eventName": "Odile's Birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-05-16",
+            "eventDescription": "It's Odile's birthday! Happy birthday goober!"
+        },
+        {
+            "eventType": "Birthday",
+            "eventName": "Bonnie's Birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-04-03",
+            "eventDescription": "It's Bonnie's birthday! Happy birthday goober!"
+        },
+        {
             "eventType": "Anniversary",
             "eventName": "ISAT $ORDINAL Anniversary!",
             "eventAnnual": true,
             "eventDate": "2023-11-20",
             "eventDescription": "Happy $ORDINAL anniversary In Stars and Time!"
-        },
-        {
-            "eventType": "Stream",
-            "eventName": "Rad's House Flipper stream",
-            "eventAnnual": false,
-            "eventDate": "2027-03-23",
-            "eventDescription": "Come watch us play House Flipper!"
         }
     ]
 }
