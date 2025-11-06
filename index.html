@@ -7,19 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <h2>Calendar</h2> -->
+    <div id="headerContainer">
+        <h1 class="title">
+            <span id="monthText"></span>
+            <span id="yearText"></span>
+        </h1>
+    </div>
     <div id="calendar"></div>
     <br>
-    <p>Day &nbsp&nbsp&nbsp&nbsp Month &nbsp&nbsp&nbsp Year</p>
-    <input class="text-field" id="dayField">
-    <input class="text-field" id="monthField">
-    <input class="text-field" id="yearField">
+
+    <div class="infoBox">
+        <input id="datePicker" type="date">
+        <button id="confirmButton">Confirm</button>
+    </div>
     <br><br>
-    <button id="confirmButton">Confirm</button>
 </body>
 
-<script src="scripts/determineDay.js"></script>
-<script src="scripts/buildCalendar.js"></script>
-<script src="scripts/main.js"></script>
+<script type="module" src="scripts/imports.js"></script>
+<script type="text/json" src="data/events.json"></script>
+<script type="text/javascript" src="scripts/determineDay.js"></script>
+<script type="text/javascript" src="scripts/buildCalendar.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
 
 </html>

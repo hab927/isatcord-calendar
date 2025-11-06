@@ -1,0 +1,18 @@
+{ 
+    "events": [
+        {
+            "eventType": "Birthday",
+            "eventName": "Siffrin's Birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-09-01",
+            "eventDescription": "It's Siffrin's birthday! Happy birthday goober!"
+        },
+        {
+            "eventType": "Stream",
+            "eventName": "Rad's House Flipper stream",
+            "eventAnnual": false,
+            "eventDate": "2027-03-23",
+            "eventDescription": "Come watch us play House Flipper!"
+        }
+    ]
+}

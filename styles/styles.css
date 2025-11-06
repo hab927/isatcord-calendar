@@ -1,27 +1,85 @@
-#calendar {
+@font-face {
+    font-family: 'vcr-osd-mono';
+    src: url('../assets/fonts/VCR_OSD_MONO.ttf');
+}
+
+* {
+    font-family: "vcr-osd-mono";
+    color: white;
+}
+
+body {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    background-color: black;
 }
 
 button {
-    width: 40%;
-    padding: 30px;
-    font:
-        bold small-caps 3.5rem "Consolas",
-        sans-serif;
-    border: 5px solid black;
+    width: 200px;
+    margin-top: 5%;
+    padding: 20px;
+    font-size: 30px;
+
+    color: white;
+    background-color: black;
+    border: 5px solid white;
+}
+
+button:hover {
+    color: gray;
+}
+
+h1, h2, h3 {
+    color: white;
+}
+
+input {
+    background: black;
+    border: 3px solid white;
+    height: 40px;
+    width: 160px;
+    font-size: 20px;
+}
+
+#calendar {
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    height: 100%
 }
 
 .day-info {
     display: flex;
+    color: white;
+    font-size: 16px;
+}
+
+.day-number {
+    display: flex;
+    font-size: 30px;
+    color: white;
 }
 
 .day {
     display: flex;
     flex: 2;
 
-    border: 2px solid black;
-    justify-content: center;
+    padding: 4px;
+    border: 2px solid white;
+    height: 10vh;
+
+    margin-left: -2px;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex: auto;
+    align-content: center;
+}
+
+.highlighted {
+    background-color: #333333;
 }
 
 .month {
@@ -29,14 +87,32 @@ button {
     align-content: stretch;
     flex: auto;
     flex-direction: column;
+    border: 5px solid white;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+
+    font-size: 60px;
 }
 
 .week {
     display: flex;
     flex: 10;
     align-content: stretch;
+
+    margin-top: -2px;
 }
 
 .text-field {
     width: 40px;
+    font-size: 30px;
+    background-color: black;
+    border: 2px solid white;
+}
+
+.text-fields {
+
 }
