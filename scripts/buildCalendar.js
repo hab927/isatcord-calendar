@@ -26,7 +26,7 @@ let chosenMonth;
 let chosenYear;
 
 async function GetEvents() {
-    const response = await fetch('./../data/events.json');
+    const response = await fetch('../data/events.json');
     const json = await response.json();
     return json;
 }
