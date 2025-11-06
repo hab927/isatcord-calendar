@@ -18,23 +18,19 @@ let monthText = document.getElementById("monthText");
 let months = ["", "January", "February", "March", "April", "May","June", "July", "August", "September", "October", "November", "December", "February"];
 let yearText = document.getElementById("yearText");
 
-function GetEvents() {
-    let events = 3;
-    return events;
+async function GetEvents() {
+    const response = await fetch('../data/events.json');
+    const json = await response.json();
+    return json;
 }
 
-function BuildCalendar(reqDay, reqMonth, reqYear) {
-
-    let ISATEvents = GetEvents();
+async function BuildCalendar(reqDay, reqMonth, reqYear) {
 
     let monthP = reqMonth.padStart(2, '0');
     let yearP = reqYear.padStart(4, '0');
     let dateStringFDOW = yearP + "-" + monthP + "-" + "01";
 
     let firstDayOfWeek = new Date(dateStringFDOW).getUTCDay();
-    
-    console.log(new Date(dateStringFDOW));
-    console.log(firstDayOfWeek);
 
     let calendar = document.getElementById("calendar");
     let weekDivs = [];
@@ -89,7 +85,7 @@ function BuildCalendar(reqDay, reqMonth, reqYear) {
             daydiv.appendChild(daynumdiv);
 
             if (dayCounter == reqDay) {
-                let infoDiv = MakeInfoDiv(daydiv, reqDay, reqMonth, reqYear);
+                let infoDiv = await MakeInfoDiv(daydiv, reqDay, reqMonth, reqYear);
                 daydiv.appendChild(infoDiv);
                 // console.log(daydiv.classList);
             }
@@ -104,10 +100,15 @@ function BuildCalendar(reqDay, reqMonth, reqYear) {
     yearText.textContent = reqYear;
 }
 
-function MakeInfoDiv(daydiv, day, month, year) {
+function ReselectCalendar(day, month, year) {
+
+}
+
+async function MakeInfoDiv(daydiv, day, month, year) {
+    let ISATEvents = await GetEvents();
+
     let div = document.createElement("div");
     div.classList.add("day-info");
-    div.textContent = "Event";
     day = 3;
     daydiv.classList.add("highlighted");
     return div;
