@@ -26,7 +26,7 @@ let chosenMonth;
 let chosenYear;
 
 async function GetEvents() {
-    const response = await fetch('../data/events.json');
+    const response = await fetch('./../data/events.json');
     const json = await response.json();
     return json;
 }
@@ -168,7 +168,7 @@ function MakeEvent(event) {
                     ordinalSuffix = "th";
             }
         }
-        
+
         ordinal += ordinalSuffix;
         let newTitle = originalTitle.replace("$ORDINAL", ordinal);
         eventDiv.textContent = newTitle;
