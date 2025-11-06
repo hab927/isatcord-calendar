@@ -41,6 +41,13 @@
             "eventAnnual": true,
             "eventDate": "2023-11-20",
             "eventDescription": "Happy $ORDINAL anniversary In Stars and Time!"
+        },
+        {
+            "eventType": "Game",
+            "eventName": "fantastic day for people who love the number 11",
+            "eventAnnual": false,
+            "eventDate": "2025-11-11",
+            "eventDescription": "i love the number 11"
         }
     ]
 }

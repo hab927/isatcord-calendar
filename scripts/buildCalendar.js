@@ -18,6 +18,8 @@ let monthText = document.getElementById("monthText");
 let months = ["", "January", "February", "March", "April", "May","June", "July", "August", "September", "October", "November", "December", "February"];
 let yearText = document.getElementById("yearText");
 
+let eventBoard = document.getElementById("event-board");
+
 let weekDivs = []; // universal tracker for week divs
 let dayDivs = []; // universally keep track of day divs
 
@@ -146,44 +148,94 @@ function MakeEvent(event) {
     tooltipDiv.textContent = event.eventDescription;
 
     if (event.eventType == "Anniversary") {
-        let ordinal = String(chosenYear - Number(event.eventDate.split('-')[0]));
-        let ordinalSuffix;
-
-        const yearDiff = chosenYear - Number(event.eventDate.split('-')[0]);
-        const mod100 = yearDiff % 100;
-        const mod10 = yearDiff % 10;
-
-        if (mod100 >= 11 && mod100 <= 13) {
-            ordinalSuffix = "th";
-        } 
-        else {
-            switch (mod10) {
-                case 1:
-                    ordinalSuffix = "st";
-                    break;
-                case 2:
-                    ordinalSuffix = "nd";
-                    break;
-                case 3:
-                    ordinalSuffix = "rd";
-                    break;
-                default:
-                    ordinalSuffix = "th";
-            }
-        }
-
-        ordinal += ordinalSuffix;
-        let newTitle = event.eventName.replace("$ORDINAL", ordinal);
-        let newDesc = event.eventDescription.replace("$ORDINAL", ordinal);
-        eventDiv.textContent = newTitle;
-        tooltipDiv.textContent = newDesc;
+        let newEvent = HandleAnniversary(event, chosenYear - Number(event.eventDate.split('-')[0]));
+        eventDiv.textContent = newEvent[0];
+        tooltipDiv.textContent = newEvent[1];
     }
     else {
         eventDiv.textContent = event.eventName;
     }
 
-    // let eventDay = parseInt(event.eventDate.split('-')[2], 10);
     eventDiv.appendChild(tooltipDiv);
 
     return eventDiv;
+}
+
+function HandleAnniversary(oldEvent) {
+    let ordinal = chosenYear - Number(oldEvent.eventDate.split('-')[0]);
+    let ordinalSuffix;
+
+    const mod100 = ordinal % 100;
+    const mod10 = ordinal % 10;
+
+    if (mod100 >= 11 && mod100 <= 13) {
+        ordinalSuffix = "th";
+    } 
+    else {
+        switch (mod10) {
+            case 1:
+                ordinalSuffix = "st";
+                break;
+            case 2:
+                ordinalSuffix = "nd";
+                break;
+            case 3:
+                ordinalSuffix = "rd";
+                break;
+            default:
+                ordinalSuffix = "th";
+        }
+    }
+
+    ordinal += ordinalSuffix;
+    let newTitle = oldEvent.eventName.replace("$ORDINAL", ordinal);
+    let newDesc = oldEvent.eventDescription.replace("$ORDINAL", ordinal);
+    return [newTitle, newDesc];
+}
+
+async function UpdateEventBoard(day, month, year) {
+
+    const evJSON = await GetEvents();
+    eventFound = false;
+
+    while (eventBoard.firstChild) { // clear it
+        eventBoard.removeChild(eventBoard.firstChild);
+    }
+
+    for (const event of evJSON.events) {
+        let monthNumber = String(parseInt(event.eventDate.split('-')[1], 10));
+        let dayNumber = String(parseInt(event.eventDate.split('-')[2], 10));
+        if (monthNumber == month && dayNumber == day) {
+            eventFound = true;
+            if (!event.eventAnnual) {
+                if (event.eventDate.split('-')[0] != year) {
+                    continue;
+                }
+            }
+
+            let eventTitleDiv = document.createElement("div");
+            eventTitleDiv.classList.add("event-title");
+            let eventDescDiv = document.createElement("div");
+            eventDescDiv.classList.add("event-desc");
+
+            if (event.eventType == "Anniversary") {
+                const newEvent = HandleAnniversary(event);
+                eventTitleDiv.textContent = newEvent[0];
+                eventDescDiv.textContent = "* " + newEvent[1];
+            }
+            else {
+                eventTitleDiv.textContent = event.eventName;
+                console.log(event.eventName);
+                eventDescDiv.textContent = "*" + event.eventDescription;
+            }
+            eventTitleDiv.appendChild(eventDescDiv);
+            eventBoard.appendChild(eventTitleDiv);
+        }
+    }
+    if (!eventFound) {
+        let eventTitleDiv = document.createElement("div");
+        eventTitleDiv.classList.add("event-title");
+        eventTitleDiv.textContent = "No events today, come back later!"
+        eventBoard.appendChild(eventTitleDiv);
+    }
 }

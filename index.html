@@ -23,17 +23,20 @@
             <button id="confirmButton">View Date</button>
         </div>
     </div>
-    <div class="info-box">
-        <h1>Events Today:</h2>
+    <div class="center-container">
+        <div class="info-box">
+            <h1 class="info-title">Events Today:</h1>
+            <div id="event-board"></div>
+        </div>
     </div>
     <br><br>
 </body>
 
-<script type="module" src="scripts/imports.js"></script>
 <script type="text/json" src="data/events.json"></script>
 <script type="text/javascript" src="scripts/buildCalendar.js"></script>
 <script type="text/javascript" src="scripts/determineDay.js"></script>
 <script type="text/javascript" src="scripts/confirmButton.js"></script>
+<script type="text/javascript" src="scripts/hoverTooltip.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
 
 </html>

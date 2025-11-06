@@ -7,4 +7,5 @@ window.onload = async function() {
     datePicker.value = currentDate;
 
     BuildCalendar(dateArray[0], dateArray[1], dateArray[2]);
+    UpdateEventBoard(dateArray[0], dateArray[1], dateArray[2]);
 }

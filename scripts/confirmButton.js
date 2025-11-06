@@ -11,11 +11,13 @@ confirmButton.onclick = function() {
 
     let dateArray = GetDateArray();
 
-    if (months[chosenMonth] != shownMonth || chosenYear != shownYear) {
+    if (months[pickedMonth] != shownMonth || chosenYear != shownYear) {
         monthDiv.remove();
         BuildCalendar(dateArray[0], dateArray[1], dateArray[2]);
     }
     else { // highlight a different div
         ReselectCalendar(Number(dateArray[0]));
     }
+
+    UpdateEventBoard(dateArray[0], dateArray[1], dateArray[2]);
 };
