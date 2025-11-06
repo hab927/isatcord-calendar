@@ -25,15 +25,8 @@ let chosenDay;
 let chosenMonth;
 let chosenYear;
 
-// async function GetEvents() {
-//     const response = await fetch('/data/events.json');
-//     const json = await response.json();
-//     return json;
-// }
-
 async function GetEvents() {
-    const repoName = window.location.pathname.split('/')[1];
-    const response = await fetch(`/${repoName}/data/events.json`);
+    const response = await fetch('./data/events.json');
     const json = await response.json();
     return json;
 }
