@@ -41,6 +41,27 @@
             "eventAnnual": true,
             "eventDate": "2023-11-20",
             "eventDescription": "Happy $ORDINAL anniversary In Stars and Time!"
-        }
+        },
+        {
+            "eventType": "Birthday",
+            "eventName": "ritsu's birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-04-14",
+            "eventDescription": "happy birthday ritsu!!"
+        },
+        {
+            "eventType": "Birthday",
+            "eventName": "hab's birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-09-27",
+            "eventDescription": "happy birthday hab!!"
+        },
+        {
+            "eventType": "Birthday",
+            "eventName": "echoe's birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-12-04",
+            "eventDescription": "happy birthday echoe!!"
+        },
     ]
 }
