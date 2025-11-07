@@ -50,6 +50,13 @@
             "eventDescription": "Happy $ORDINAL anniversary In Stars and Time!"
         },
         {
+            "eventType": "Anniversary",
+            "eventName": "SASASAP $ORDINAL Anniversary!",
+            "eventAnnual": true,
+            "eventDate": "2021-02-27",
+            "eventDescription": "Happy $ORDINAL anniversary START AGAIN: START AGAIN: START AGAIN: A Prologue!"
+        },
+        {
             "eventType": "Birthday",
             "eventName": "ritsu's birthday",
             "eventAnnual": true,
