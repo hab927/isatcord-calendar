@@ -65,6 +65,13 @@
         },
         {
             "eventType": "Birthday",
+            "eventName": "anemoi's birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-11-10",
+            "eventDescription": "happy birthday anemoi!!"
+        },
+        {
+            "eventType": "Birthday",
             "eventName": "hab's birthday",
             "eventAnnual": true,
             "eventDate": "2025-09-27",
