@@ -36,6 +36,13 @@
             "eventDescription": "It's Bonnie's birthday! Happy birthday goober!"
         },
         {
+            "eventType": "Birthday",
+            "eventName": "insertdisc5's Birthday",
+            "eventAnnual": true,
+            "eventDate": "2025-09-12",
+            "eventDescription": "HAPPY BIRTHDAY ADRIENNE!!!!!! WOOOOO!!!!"
+        },
+        {
             "eventType": "Anniversary",
             "eventName": "ISAT $ORDINAL Anniversary!",
             "eventAnnual": true,
