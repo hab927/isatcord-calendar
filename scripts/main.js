@@ -1,8 +1,14 @@
 window.onload = async function() {
     let now = new Date();
-    let currentDate = now.toISOString().split('T')[0];
-    let dateArray = currentDate.split('-');
-    dateArray.reverse();
+    let currentDate = now.toLocaleDateString();
+    let localeArray = currentDate.split('/');
+    let dateArray = [];
+
+    console.log(localeArray);
+
+    dateArray[0] = localeArray[1];
+    dateArray[1] = localeArray[0];
+    dateArray[2] = localeArray[2];
 
     datePicker.value = currentDate;
 
